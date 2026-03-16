@@ -1,42 +1,13 @@
-Aquí tienes el código CSS que podrías añadir o modificar en tu archivo css/estilos.css:
-
-/* Para las subpestañas del menú desplegable */
-.dropdown-content a {
-  padding: 12px 16px; /* Aumenta el espacio interno (arriba/abajo y lados) */
-  font-size: 16px;   /* Cambia el tamaño del texto. Puedes usar 'em', 'rem' o 'pt' también */
-  /* Si quieres que ocupen todo el ancho disponible del dropdown, ya lo hacen por defecto con display: block */
-  /* Pero si por alguna razón no lo hicieran, podrías añadir: */
-  /* display: block; */
-  /* width: 100%; */
+/* Asegura que HTML y BODY ocupen todo el alto de la ventana */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
-/* Si quisieras que el contenedor del menú desplegable fuera más ancho en general */
-.dropdown-content {
-  min-width: 200px; /* Por ejemplo, para que el menú sea al menos 200px de ancho */
-  /* Puedes ajustar este valor si los textos son muy largos y no caben */
-}
-/* También puedes ajustar el tamaño de los elementos principales de la navegación */
-/* Si sientes que las pestañas principales (INICIO, NOSOTROS, CONTACTO) también deberían cambiar */
-nav a {
-  padding: 14px 20px; /* Más espacio interno */
-  font-size: 17px;   /* Texto un poco más grande */
-}
-/* Y el botón principal del dropdown también (OFERTA EDUCATIVA) */
-.dropbtn {
-  padding: 14px 20px; /* Igual que los otros elementos principales de la nav */
-  font-size: 17px;
-}
-
-
-
-
-
-
-
 
 body {
-  margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #f2f4f7;
+  background-color: #f2f4f7; /* Color de respaldo para el body */
   color: #333;
 }
 
@@ -48,7 +19,7 @@ header {
 }
 
 header h1 {
-  font-size: 25px; /* tamañp del texxto del titulo
+  font-size: 25px; /* tamaño del texto del titulo */
   /*margin: 4;*/
 }
 
@@ -73,10 +44,21 @@ nav a:hover {
 main {
   max-width: 1000px;
   margin: 30px auto;
+  background-color: transparent; /* <-- ¡IMPORTANTE: ESTE ES EL CAMBIO CLAVE! */
+  padding: 30px;
+  border-radius: 5px;
+}
+
+/* Si quieres que el contenido dentro del main tenga un fondo blanco,
+   necesitarás envolverlo en un div y darle estilo a ese div.
+   Por ejemplo, en tu HTML: <main><div class="contenido-blanco">...</div></main>
+   Y aquí el CSS:
+.contenido-blanco {
   background-color: white;
   padding: 30px;
   border-radius: 5px;
 }
+*/
 
 /* SECCIONES */
 section {
@@ -85,7 +67,7 @@ section {
 
 section h2 {
   border-bottom: 2px solid #0b3c5d;
-  padding-bottom: 100px;
+  padding-bottom: 100px; /* Esto es mucho espacio, revisa si es intencional */
   color: #0b3c5d;
 }
 
@@ -155,7 +137,6 @@ footer {
   display: block;
 }
 
-
 .pdf-section {
   margin-top: 40px;
 }
@@ -173,7 +154,6 @@ footer {
   background-color: #B22222;
 }
 
-
 .contenedor-logos {
   text-align: center;  /* centra las imágenes */
 }
@@ -184,33 +164,22 @@ footer {
   margin: 20px;
 }
 
-
-/*body {
-  background: linear-gradient(
-      rgba(0, 0, 0, 0.2),
-      rgba(0, 0, 0, 0.2)
-    ),
-    url("fondo.jpeg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-*/
-
+/* -- CAMBIOS PARA EL FONDO -- */
+/* Esta es la clase que se aplica al body en index.html */
 .fondo-index{
-   background-image: linear-gradient(
+   background: linear-gradient(
       rgba(255,255,255,0.1),
       rgba(255,255,255,0.1)
     ),
-    url("imagenes/Fondo.png");
+    url("imagenes/Fondo.png"); /* Asegúrate de que esta ruta sea EXACTA */
   background-size: cover;
-  background-position: left;
+  background-position: center; /* Mejor centrado para imágenes de fondo */
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-color: #f2f4f7; /* Un color de respaldo si la imagen no carga */
 }
 
-
-
+/* ---- OTROS ESTILOS ---- */
 .galeria{
   display: flex;
   flex-wrap: wrap;
@@ -218,14 +187,12 @@ footer {
   gap: 20px;
 }
 
-
 .galeria img{
   width:300px;
   height:200px;
   object-fit:cover;
   border-radius:10px;
 }
-
 
 .cursos{
     padding:40px;
@@ -255,9 +222,6 @@ footer {
 .curso h3{
     color:#1a4fa3;
 }
-
-
-
 
 .futuro{
 max-width:1000px;
@@ -318,7 +282,6 @@ font-weight:bold;
 .boton:hover{
 background:#163d7a;
 }
-
 
 /* CONTENEDOR GENERAL */
 
@@ -384,7 +347,4 @@ border-radius:10px;
 box-shadow:0 4px 10px rgba(0,0,0,0.2);
 }
 
-
 /*-------Sistemas Computacionales----------------*/
-
-
